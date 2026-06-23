@@ -32,7 +32,6 @@ export default function AdminLayout({ children, currentPath, navigate }: AdminLa
 
   const SidebarContent = () => (
     <div className="flex flex-col h-full">
-      {/* Logo */}
       <div className="px-6 py-6 border-b border-beige-200">
         <button
           onClick={() => { navigate('/admin'); setSidebarOpen(false); }}
@@ -56,7 +55,6 @@ export default function AdminLayout({ children, currentPath, navigate }: AdminLa
         </button>
       </div>
 
-      {/* Nav */}
       <nav className="flex-1 px-3 py-4">
         <p className="font-body text-[9px] tracking-[0.25em] uppercase text-stone-400 px-3 mb-2">
           Menu
@@ -84,7 +82,6 @@ export default function AdminLayout({ children, currentPath, navigate }: AdminLa
         ))}
       </nav>
 
-      {/* User */}
       <div className="px-3 pb-4 border-t border-beige-200 pt-4">
         <div className="px-3 py-3 bg-beige-100 rounded mb-2">
           <p className="font-body text-[10px] tracking-[0.1em] uppercase text-stone-400">
@@ -107,12 +104,10 @@ export default function AdminLayout({ children, currentPath, navigate }: AdminLa
 
   return (
     <div className="min-h-screen bg-cream-200 flex">
-      {/* Desktop sidebar */}
       <aside className="hidden lg:flex w-60 flex-shrink-0 flex-col bg-cream-100 border-r border-beige-200 fixed top-0 left-0 bottom-0 z-30">
         <SidebarContent />
       </aside>
 
-      {/* Mobile sidebar */}
       <AnimatePresence>
         {sidebarOpen && (
           <>
@@ -142,9 +137,7 @@ export default function AdminLayout({ children, currentPath, navigate }: AdminLa
         )}
       </AnimatePresence>
 
-      {/* Main content */}
       <div className="flex-1 lg:ml-60 flex flex-col min-h-screen">
-        {/* Top bar */}
         <header className="sticky top-0 z-20 bg-cream-100 border-b border-beige-200 px-6 lg:px-8 h-14 flex items-center justify-between">
           <button
             className="lg:hidden text-stone-600"
@@ -161,7 +154,7 @@ export default function AdminLayout({ children, currentPath, navigate }: AdminLa
           </div>
           <div className="flex items-center gap-3 ml-auto">
             <button
-              onClick={() => navigate('/')}
+              onClick={() => window.open('https://catalogo.minaslight.com.br', '_blank')}
               className="font-body text-xs text-stone-400 hover:text-stone-700 transition-colors flex items-center gap-1.5"
             >
               <Settings size={13} strokeWidth={1.5} />
@@ -170,7 +163,6 @@ export default function AdminLayout({ children, currentPath, navigate }: AdminLa
           </div>
         </header>
 
-        {/* Page content */}
         <main className="flex-1 p-6 lg:p-8">
           {children}
         </main>
