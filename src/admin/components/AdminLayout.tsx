@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  LayoutDashboard, Package, LogOut, Menu, X, ChevronRight, Settings
+  LayoutDashboard, Package, LogOut, Menu, X, ChevronRight, ExternalLink
 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 
@@ -160,13 +160,15 @@ export default function AdminLayout({ children, currentPath, navigate }: AdminLa
             </span>
           </div>
           <div className="flex items-center gap-3 ml-auto">
-            <button
-              onClick={() => navigate('/')}
+            
+              href="https://catalogo.minaslight.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-body text-xs text-stone-400 hover:text-stone-700 transition-colors flex items-center gap-1.5"
             >
-              <Settings size={13} strokeWidth={1.5} />
+              <ExternalLink size={13} strokeWidth={1.5} />
               <span className="hidden sm:inline">Ver site</span>
-            </button>
+            </a>
           </div>
         </header>
 
